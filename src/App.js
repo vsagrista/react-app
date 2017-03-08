@@ -20,10 +20,11 @@ class App extends React.Component {
                  <p>This is a number property {this.props.numberProp} and required </p>
                  <br/>
                  <h2>What we write here changes the state property "text"</h2>
-                 <input type="text" onChange={ this.update.bind(this) }/>
+                 <Widget  update={ this.update.bind(this) }/>
                  <p>It changes here: <strong>{ this.state.txt }</strong></p>
         </div>)  
     }
+
 }
 
 // const App2 = ()=> <h1>This is a stateless component</h1>
@@ -36,6 +37,9 @@ App.propTypes = {
 App.dafaultProps = {
     textProp: "default text"
 }
+
+const Widget = (props) => 
+    <input type="text" onChange={ props.update }/>
 
 export default App;
 
