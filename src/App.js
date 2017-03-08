@@ -3,13 +3,26 @@ import React from "react";
 // State component
 
 class App extends React.Component {
+    constructor () {
+        super();
+        this.state = {
+            txt: "Type on the input to see me change"
+        }
+    }
+    update (e) {
+        this.setState({txt: e.target.value });
+    }
     render () {
-        return <div>
+        return (<div>
                  <h1>This is a Component</h1>
                  <p>Some text below it</p>
                  <p>This is a text property {this.props.textProp} </p>
                  <p>This is a number property {this.props.numberProp} and required </p>
-               </div>  
+                 <br/>
+                 <h2>What we write here changes the state property "text"</h2>
+                 <input type="text" onChange={ this.update.bind(this) }/>
+                 <p>It changes here: <strong>{ this.state.txt }</strong></p>
+        </div>)  
     }
 }
 
