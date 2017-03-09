@@ -14,7 +14,7 @@ class App extends React.Component {
     }
     render() {
         return (<div>
-            <h2>This button is a stateless component and within it there's a class component</h2>
+            <h2>This button is a stateless component, inside it has a class component</h2>
             <Button>I <HeartComponent/> React</Button>
             <h2>What we write here changes the state property "text"</h2>
             <Widget update={this.update.bind(this)} />
@@ -23,8 +23,6 @@ class App extends React.Component {
     }
 
 }
-
-// const App2 = ()=> <h1>This is a stateless component</h1>
 
 App.propTypes = {
     textProp: React.PropTypes.string,
